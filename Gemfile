@@ -6,8 +6,13 @@ gem 'rails', '4.0.0.rc1'
 # Database
 gem 'sqlite3'
 
+# Templates
+gem 'haml-rails'
+gem 'simple_form'
+
 # CSS
 gem 'sass-rails', '~> 4.0.0.rc1'
+gem 'bootstrap-sass-rails'
 
 # Javascript
 gem 'coffee-rails', '~> 4.0.0'
