@@ -30,6 +30,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :test do
+  gem 'factory_girl_rails'
+end
+
 # Debugger
 gem 'debugger', group: [:development, :test]
 

@@ -28,6 +28,7 @@ module PullTracker
     config.generators do |g|
       g.template_engine :haml
       g.form_builder :simple_form
+      g.fixture_replacement :factory_girl, dir: 'spec/factories'
     end
   end
 end
