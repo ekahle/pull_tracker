@@ -29,6 +29,7 @@ module PullTracker
       g.template_engine :haml
       g.form_builder :simple_form
       g.fixture_replacement :factory_girl, dir: 'spec/factories'
+      g.test_framework :rspec, fixture: true
     end
   end
 end
