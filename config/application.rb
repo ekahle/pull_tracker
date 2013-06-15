@@ -26,8 +26,6 @@ module PullTracker
     # config.i18n.default_locale = :de
 
     config.generators do |g|
-      g.template_engine :haml
-      g.form_builder :simple_form
       g.fixture_replacement :factory_girl, dir: 'spec/factories'
       g.test_framework :rspec, fixture: true
     end
