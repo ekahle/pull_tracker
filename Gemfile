@@ -3,6 +3,9 @@ source 'http://rubygems.org'
 # Rails
 gem 'rails', '4.0.0.rc1'
 
+# Security
+gem "devise", "~> 3.0.0.rc"
+
 # Database
 gem 'sqlite3'
 
