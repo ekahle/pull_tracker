@@ -27,4 +27,8 @@ describe User do
     expect(FactoryGirl.build(:user, password: 'pw').valid?).to be_false
     expect(FactoryGirl.build(:user, password: 'password').valid?).to be_true
   end
+
+  it 'should concatenate first and last names into the full name' do
+    expect(FactoryGirl.build(:user).full_name).to match /^John Doe$/
+  end
 end
