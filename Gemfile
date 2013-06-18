@@ -33,7 +33,9 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :test do
+group :development, :test do
+  gem 'autotest-rails'
+  gem 'autotest-growl'
   gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'capybara'
