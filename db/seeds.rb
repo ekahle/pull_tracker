@@ -2,7 +2,9 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
 User.create(
-  email: 'foo@bar.baz',
-  password: 'foobarbaz',
-  password_confirmation: 'foobarbaz'
+  first_name: 'John',
+  last_name: 'Doe',
+  email: 'JohnDoe@example.com',
+  password: 'password',
+  password_confirmation: 'password'
 )

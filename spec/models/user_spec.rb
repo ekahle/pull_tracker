@@ -1,6 +1,15 @@
 require 'spec_helper'
 
 describe User do
+  it 'must have a valid factory' do
+    expect(FactoryGirl.build(:user).valid?).to be_true
+  end
+
+  it 'must have a first and last name' do
+    expect(FactoryGirl.build(:user, first_name: '').valid?).to be_false
+    expect(FactoryGirl.build(:user, last_name: '').valid?).to be_false
+  end
+
   it 'must have an email address that looks like an email address' do
     expect(FactoryGirl.build(:user, email: 'foo').valid?).to be_false
     expect(FactoryGirl.build(:user, email: 'foo@bar').valid?).to be_false
