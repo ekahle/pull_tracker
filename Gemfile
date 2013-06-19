@@ -39,8 +39,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'cucumber-rails', require: false
-  gem 'database_cleaner'
 end
 
 # Debugger
