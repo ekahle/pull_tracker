@@ -3,8 +3,8 @@ require 'spec_helper'
 describe HomeController do
 
   before (:each) do
-    @user = FactoryGirl.create(:user)
-    sign_in @user
+    @current_user = FactoryGirl.create(:user)
+    sign_in @current_user
   end
 
   describe "GET 'index'" do
