@@ -1,3 +1,6 @@
+ruby '1.9.3'
+
+# RubyGems
 source 'http://rubygems.org'
 
 # Rails
