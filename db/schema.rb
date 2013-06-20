@@ -11,7 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130618185451) do
+ActiveRecord::Schema.define(version: 20130620225812) do
+
+  create_table "pulls", force: true do |t|
+    t.string   "name"
+    t.string   "status"
+    t.date     "target_completion_date"
+    t.text     "description"
+    t.string   "file"
+    t.string   "investigator"
+    t.string   "requester"
+    t.string   "pull_list_maker"
+    t.string   "lab_contact_name"
+    t.text     "notes_for_lab"
+    t.boolean  "has_mta",                               default: false
+    t.boolean  "has_budget",                            default: false
+    t.boolean  "accepted_consent_to_long_term_storage", default: false
+    t.boolean  "accepted_emory_specimens",              default: false
+    t.boolean  "accepted_cold_chain_quality",           default: false
+    t.boolean  "accepted_specimen_quality",             default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

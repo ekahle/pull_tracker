@@ -1,0 +1,54 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @pull.name
+%p
+  %b Status:
+  = @pull.status
+%p
+  %b Target completion date:
+  = @pull.target_completion_date
+%p
+  %b Description:
+  = @pull.description
+%p
+  %b File:
+  = @pull.file
+%p
+  %b Investigator:
+  = @pull.investigator
+%p
+  %b Requester:
+  = @pull.requester
+%p
+  %b Pull list maker:
+  = @pull.pull_list_maker
+%p
+  %b Lab contact name:
+  = @pull.lab_contact_name
+%p
+  %b Notes for lab:
+  = @pull.notes_for_lab
+%p
+  %b Has mta:
+  = @pull.has_mta
+%p
+  %b Has budget:
+  = @pull.has_budget
+%p
+  %b Accepted consent to long term storage:
+  = @pull.accepted_consent_to_long_term_storage
+%p
+  %b Accepted emory specimens:
+  = @pull.accepted_emory_specimens
+%p
+  %b Accepted cold chain quality:
+  = @pull.accepted_cold_chain_quality
+%p
+  %b Accepted specimen quality:
+  = @pull.accepted_specimen_quality
+
+= link_to 'Edit', edit_pull_path(@pull)
+\|
+= link_to 'Back', pulls_path
