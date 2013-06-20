@@ -3,6 +3,7 @@ require 'spec_helper'
 describe UsersController do
 
   before (:each) do
+    DatabaseCleaner.clean_with(:truncation)
     @current_user = FactoryGirl.create(:user)
     sign_in @current_user
   end
