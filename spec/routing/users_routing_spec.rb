@@ -4,44 +4,44 @@ describe UsersController do
   describe "routing" do
 
     it "routes to sessions#new" do
-      get("/users/sign_in").should route_to("devise/sessions#new")
+      expect(get("/users/sign_in")).to route_to("devise/sessions#new")
     end
 
     it "routes to sessions#create" do
-      post("/users/sign_in").should route_to("devise/sessions#create")
+      expect(post("/users/sign_in")).to route_to("devise/sessions#create")
     end
 
     it "routes to sessions#destroy" do
-      delete("/users/sign_out").should route_to("devise/sessions#destroy")
+      expect(delete("/users/sign_out")).to route_to("devise/sessions#destroy")
     end
 
     it "routes to #index" do
-      get("/users").should route_to("users#index")
+      expect(get("/users")).to route_to("users#index")
     end
 
     it "routes to #new" do
-      get("/users/new").should route_to("users#new")
+      expect(get("/users/new")).to route_to("users#new")
     end
 
     it "routes to #show" do
-      get("/users/1").should route_to("users#show", :id => "1")
+      expect(get("/users/1")).to route_to("users#show", :id => "1")
     end
 
     it "routes to #edit" do
-      get("/users/1/edit").should route_to("users#edit", :id => "1")
+      expect(get("/users/1/edit")).to route_to("users#edit", :id => "1")
     end
 
     it "routes to #create" do
-      post("/users").should route_to("users#create")
+      expect(post("/users")).to route_to("users#create")
     end
 
     it "routes to #update" do
-      patch("/users/1").should route_to("users#update", :id => "1")
-      put("/users/1").should route_to("users#update", :id => "1")
+      expect(patch("/users/1")).to route_to("users#update", :id => "1")
+      expect(put("/users/1")).to route_to("users#update", :id => "1")
     end
 
     it "routes to #destroy" do
-      delete("/users/1").should route_to("users#destroy", :id => "1")
+      expect(delete("/users/1")).to route_to("users#destroy", :id => "1")
     end
 
   end
