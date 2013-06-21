@@ -7,8 +7,13 @@ describe User do
     expect(FactoryGirl.create(:user)).to be_true
   end
 
-  it 'must have a first and last name' do
+  it 'must have a first name' do
+    expect(FactoryGirl.build(:user, first_name: nil)).to be_invalid
     expect(FactoryGirl.build(:user, first_name: '')).to be_invalid
+  end
+
+  it 'must have a last name' do
+    expect(FactoryGirl.build(:user, last_name: nil)).to be_invalid
     expect(FactoryGirl.build(:user, last_name: '')).to be_invalid
   end
 
