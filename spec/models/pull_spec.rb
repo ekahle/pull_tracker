@@ -3,6 +3,8 @@ require 'spec_helper'
 describe Pull do
   it 'must have a valid factory' do
     expect(FactoryGirl.build(:pull)).to be_valid
+    expect(FactoryGirl.create(:pull)).to be_true
+    expect(FactoryGirl.create(:pull)).to be_true
   end
 
   it 'must have a name' do

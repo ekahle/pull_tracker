@@ -3,6 +3,8 @@ require 'spec_helper'
 describe User do
   it 'must have a valid factory' do
     expect(FactoryGirl.build(:user).valid?).to be_true
+    expect(FactoryGirl.create(:user)).to be_true
+    expect(FactoryGirl.create(:user)).to be_true
   end
 
   it 'must have a first and last name' do
