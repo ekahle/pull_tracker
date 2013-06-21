@@ -56,7 +56,7 @@ class PullsController < ApplicationController
   def destroy
     @pull.destroy
     respond_to do |format|
-      format.html { redirect_to pulls_url }
+      format.html { redirect_to pulls_url, notice: 'Pull was successfully deleted.' }
       format.json { head :no_content }
     end
   end

@@ -14,7 +14,7 @@
       %td= mail_to user.email
       %td= link_to 'Show', user
       %td= link_to 'Edit', edit_user_path(user)
-      %td= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to 'Destroy', user, :method => :delete, :data => { :confirm => "Are you sure you want to delete the user record for #{user.full_name}?" }
 
 %br
 
