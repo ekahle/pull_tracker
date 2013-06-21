@@ -3,6 +3,7 @@ require 'spec_helper'
 describe 'signing in' do
 
   before :all do
+    DatabaseCleaner.clean_with(:truncation)
     FactoryGirl.create(:user,
       first_name: 'John',
       last_name: 'Doe',
