@@ -44,6 +44,7 @@ group :development, :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'database_cleaner'
+  gem 'simplecov', require: false
 end
 
 # Debugger
