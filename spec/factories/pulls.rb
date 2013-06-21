@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :pull do
-    name "MyString"
+    sequence(:name) { |n| "Pull #{n}" }
     status "MyString"
     target_completion_date "2013-06-20"
     description "MyText"
