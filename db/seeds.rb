@@ -1,10 +1,9 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
-User.create(
-  first_name: 'John',
-  last_name: 'Doe',
-  email: 'JohnDoe@example.com',
-  password: 'password',
-  password_confirmation: 'password'
-)
+## Default user
+User.find_or_create_by_email(FactoryGirl.attributes_for(:user, email: 'JohnDoe@example.com'))
+
+## Just some play data
+3.times do
+  User.find_or_create_by_email(FactoryGirl.attributes_for(:user))
+  Pull.find_or_create_by_name(FactoryGirl.attributes_for(:pull))
+end
