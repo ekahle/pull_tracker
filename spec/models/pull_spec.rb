@@ -11,8 +11,7 @@ describe Pull do
   end
 
   it 'must have a unique name' do
-    pull_params = FactoryGirl.attributes_for(:pull)
-    Pull.create! pull_params
-    expect(FactoryGirl.build(:pull, pull_params)).to be_invalid
+    pull = FactoryGirl.create(:pull)
+    expect {FactoryGirl.create(:pull, name: pull.name)}.to raise_error(ActiveRecord::RecordInvalid)
   end
 end

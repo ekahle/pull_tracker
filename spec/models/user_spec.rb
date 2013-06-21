@@ -18,9 +18,8 @@ describe User do
   end
 
   it 'must have a unique email address' do
-    user_params = FactoryGirl.attributes_for(:user)
-    User.create! user_params
-    expect {User.create! user_params}.to raise_error(ActiveRecord::RecordInvalid)
+    user = FactoryGirl.create(:user)
+    expect {FactoryGirl.create(:user, email: user.email)}.to raise_error(ActiveRecord::RecordInvalid)
   end
 
   it 'must have a password that is at least eight characters long' do
