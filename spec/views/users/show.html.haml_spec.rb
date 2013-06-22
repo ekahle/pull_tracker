@@ -1,12 +1,12 @@
 require 'spec_helper'
 
-describe "users/show" do
-  before(:each) do
-    @user = assign(:user, stub_model(User))
-  end
+describe 'users/show' do
+  before(:each) {assign(:user, FactoryGirl.build(:user))}
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do
     render
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
+    expect(rendered).to render_template partial: 'layouts/_page_header'
+    expect(rendered).not_to have_selector 'h1'
+    expect(rendered).to have_selector 'div#user-detail'
   end
 end

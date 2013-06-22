@@ -1,15 +1,12 @@
 require 'spec_helper'
 
-describe "users/new" do
-  before(:each) do
-    assign(:user, stub_model(User).as_new_record)
-  end
+describe 'users/new' do
+  before(:each) {assign(:user, User.new)}
 
-  it "renders new user form" do
+  it 'renders new user form' do
     render
-
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "form[action=?][method=?]", users_path, "post" do
-    end
+    expect(rendered).to render_template partial: 'layouts/_page_header'
+    expect(rendered).not_to have_selector 'h1'
+    assert_select 'form#new_user[action=?][method=?]', users_path, 'post'
   end
 end

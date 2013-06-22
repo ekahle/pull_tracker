@@ -1,15 +1,12 @@
 require 'spec_helper'
 
-describe "users/edit" do
-  before(:each) do
-    @user = assign(:user, stub_model(User))
-  end
+describe 'users/edit' do
+  before(:each) {assign(:user, FactoryGirl.create(:user))}
 
-  it "renders the edit user form" do
+  it 'renders new user form' do
     render
-
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "form[action=?][method=?]", user_path(@user), "post" do
-    end
+    expect(rendered).to render_template partial: 'layouts/_page_header'
+    expect(rendered).not_to have_selector 'h1'
+    assert_select "form#edit_user_#{User.last.id}[action=?][method=?]", user_path(User.last), 'post'
   end
 end
