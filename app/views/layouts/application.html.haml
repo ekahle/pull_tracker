@@ -7,25 +7,22 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
-    = render 'layouts/header'
+    = render 'layouts/site_header'
 
     .container-fluid
       %section{role: "main"}
 
         - if content_for?(:page_header)
-          .row-fluid
-            .span12
-              %header#page-header.page-header
-                = yield :page_header
+          = yield :page_header
 
         .row-fluid
           - if content_for?(:sidebar)
             .span3
-              #sidebar
+              .nav#page-nav#sidebar
                 = yield :sidebar
           %div{class: "span#{content_for?(:sidebar) ? 9 : 12}"}
             #content
               = render 'layouts/alerts'
               = yield
 
-    = render 'layouts/footer'
+      = render 'layouts/site_footer'
