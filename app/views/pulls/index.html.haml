@@ -1,0 +1,51 @@
+= page_header 'List of pulls'
+
+%table#pulls-table
+  %tr
+    %th Name
+    %th Status
+    %th Target completion date
+    %th Description
+    %th Specimen type
+    %th File
+    %th Investigator
+    %th Requester
+    %th Pull list maker
+    %th Lab contact name
+    %th Notes for lab
+    %th Has mta
+    %th Has budget
+    %th Accepted consent to long term storage
+    %th Accepted emory specimens
+    %th Accepted cold chain quality
+    %th Accepted specimen quality
+    %th
+    %th
+    %th
+
+  - @pulls.each do |pull|
+    %tr
+      %td= pull.name
+      %td= pull.status
+      %td= pull.target_completion_date
+      %td= pull.description
+      %td= pull.specimen_type
+      %td= pull.file
+      %td= pull.investigator
+      %td= pull.requester
+      %td= pull.pull_list_maker
+      %td= pull.lab_contact_name
+      %td= pull.notes_for_lab
+      %td= pull.has_mta
+      %td= pull.has_budget
+      %td= pull.accepted_consent_to_long_term_storage
+      %td= pull.accepted_emory_specimens
+      %td= pull.accepted_cold_chain_quality
+      %td= pull.accepted_specimen_quality
+      %td= link_to 'Show', pull
+      %td= link_to 'Edit', edit_pull_path(pull)
+      %td= link_to 'Destroy', pull, :method => :delete, :data => { :confirm => 'Are you sure you want to delete this pull?' }
+
+%br
+
+= link_to 'New Pull', new_pull_path

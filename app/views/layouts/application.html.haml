@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    %title= content_for?(:title) ? "Pull tracker: #{yield :title}" : "Pull tracker"
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}
+    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    = render 'layouts/site_header'
+
+    .container-fluid
+      %section{role: "main"}
+
+        - if content_for?(:page_header)
+          = yield :page_header
+
+        .row-fluid
+          - if content_for?(:sidebar)
+            .span3
+              .nav#page-nav#sidebar
+                = yield :sidebar
+          %div{class: "span#{content_for?(:sidebar) ? 9 : 12}"}
+            #content
+              = render 'layouts/alerts'
+              = yield
+
+      = render 'layouts/site_footer'

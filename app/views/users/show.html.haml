@@ -1,0 +1,16 @@
+= page_header @user.full_name
+
+#user-detail
+  %p
+    %b First name:
+    = @user.first_name
+  %p
+    %b Last name:
+    = @user.last_name
+  %p
+    %b Email:
+    = mail_to @user.email
+
+= link_to 'Edit', edit_user_path(@user)
+\|
+= link_to 'Back', users_path

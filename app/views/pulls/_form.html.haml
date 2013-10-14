@@ -1,0 +1,42 @@
+= simple_form_for(@pull) do |f|
+  = f.error_notification
+
+  .inputs
+
+    = f.input :name
+
+    = f.input :status
+
+    = f.input :target_completion_date
+
+    = f.input :description
+	
+    = f.input :specimen_type
+
+    = f.input :file
+
+    = f.input :investigator
+
+    = f.input :requester
+
+    = f.input :pull_list_maker
+
+    = f.input :lab_contact_name
+
+    = f.input :notes_for_lab
+
+    = f.input :has_mta
+
+    = f.input :has_budget
+
+    = f.input :accepted_consent_to_long_term_storage
+
+    = f.input :accepted_emory_specimens
+
+    = f.input :accepted_cold_chain_quality
+
+    = f.input :accepted_specimen_quality
+
+
+  .actions
+    = f.button :submit

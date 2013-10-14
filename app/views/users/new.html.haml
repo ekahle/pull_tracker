@@ -1,0 +1,16 @@
+= page_header 'Create new user'
+
+= simple_form_for(@user) do |f|
+  = f.error_notification
+
+  .inputs
+    = f.input :first_name
+    = f.input :last_name
+    = f.input :email, required: true
+    = f.input :password, required: true
+    = f.input :password_confirmation, required: true
+
+  .actions
+    = f.button :submit
+
+= link_to 'Back', users_path

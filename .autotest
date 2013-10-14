@@ -1,0 +1,6 @@
+require 'autotest/restart'
+require 'autotest/migrate'
+require 'autotest/timestamp'
+require 'autotest/growl'
+
+Autotest::Growl::hide_label = true
