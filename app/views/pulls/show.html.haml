@@ -2,6 +2,9 @@
 
 #pull-detail
   %p
+    %b Number:
+    = @pull.pull_number
+  %p
     %b Name:
     = @pull.name
   %p
@@ -15,7 +18,7 @@
     = @pull.description
   %p
     %b Specimen_type
-	= @pull.specimen_type
+    = @pull.specimen_type
   %p
     %b File:
     = @pull.file

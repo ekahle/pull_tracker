@@ -2,6 +2,7 @@
 
 %table#pulls-table
   %tr
+    %th Pull number
     %th Name
     %th Status
     %th Target completion date
@@ -25,6 +26,7 @@
 
   - @pulls.each do |pull|
     %tr
+      %td= pull.pull_number
       %td= pull.name
       %td= pull.status
       %td= pull.target_completion_date
