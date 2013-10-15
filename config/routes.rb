@@ -1,4 +1,6 @@
 PullTracker::Application.routes.draw do
+  resources :pull_manifests
+
   resources :pull_lists
 
   root 'home#index'
