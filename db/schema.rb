@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131015202126) do
+ActiveRecord::Schema.define(version: 20131015211222) do
+
+  create_table "pull_lists", force: true do |t|
+    t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "pulls", force: true do |t|
     t.string  "status"
