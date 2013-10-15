@@ -69,6 +69,6 @@ class PullsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pull_params
-      params.require(:pull).permit(:pull_number, :name, :status, :target_completion_date, :description, :specimen_type, :file, :investigator, :requester, :pull_list_maker, :lab_contact_name, :notes_for_lab, :has_mta, :has_budget, :accepted_consent_to_long_term_storage, :accepted_emory_specimens, :accepted_cold_chain_quality, :accepted_specimen_quality)
+      params.require(:pull).permit(:description, :study, :participant_type, :visit_type, :specimen_type, :target_completion_date, :specimen_count, :scanned_count, :shipped_count, :not_found_count, :status, :hold, :repository_notes, :lab, :mta_number, :procedure)
     end
 end

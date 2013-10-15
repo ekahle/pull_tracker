@@ -1,60 +1,51 @@
-= page_header @pull.name
+= page_header @pull.description
 
 #pull-detail
-  %p
-    %b Number:
-    = @pull.pull_number
-  %p
-    %b Name:
-    = @pull.name
   %p
     %b Status:
     = @pull.status
   %p
-    %b Target completion date:
-    = @pull.target_completion_date
-  %p
     %b Description:
     = @pull.description
   %p
-    %b Specimen_type
+    %b Specimen type:
     = @pull.specimen_type
   %p
-    %b File:
-    = @pull.file
+    %b Study:
+    = @pull.study
   %p
-    %b Investigator:
-    = @pull.investigator
+    %b Participant type:
+    = @pull.participant_type
   %p
-    %b Requester:
-    = @pull.requester
+    %b Visit type
+    = @pull.visit_type
   %p
-    %b Pull list maker:
-    = @pull.pull_list_maker
+    %b Lab:
+    = @pull.lab
   %p
-    %b Lab contact name:
-    = @pull.lab_contact_name
+    %b Procedure:
+    = @pull.procedure
   %p
-    %b Notes for lab:
-    = @pull.notes_for_lab
+    %b Target completion date:
+    = @pull.target_completion_date
   %p
-    %b Has mta:
-    = @pull.has_mta
+    %b Hold:
+    = @pull.hold
   %p
-    %b Has budget:
-    = @pull.has_budget
+    %b Repository notes:
+    = @pull.repository_notes
   %p
-    %b Accepted consent to long term storage:
-    = @pull.accepted_consent_to_long_term_storage
+    %b Total specimens requested:
+    = @pull.specimen_count
   %p
-    %b Accepted emory specimens:
-    = @pull.accepted_emory_specimens
+    %b Has Total scanned:
+    = @pull.scanned_count
   %p
-    %b Accepted cold chain quality:
-    = @pull.accepted_cold_chain_quality
+    %b Total shipped:
+    = @pull.shipped_count
   %p
-    %b Accepted specimen quality:
-    = @pull.accepted_specimen_quality
+    %b Total not found:
+    = @pull.not_found_count
 
 = link_to 'Edit', edit_pull_path(@pull)
 \|

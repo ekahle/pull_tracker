@@ -3,42 +3,37 @@
 
   .inputs
     
-    = f.input :pull_number
-	
-    = f.input :name
-
     = f.input :status
-
-    = f.input :target_completion_date
-
+	
     = f.input :description
+
+    = f.input :study
+
+    = f.input :participant_type
+
+    = f.input :visit_type
 	
     = f.input :specimen_type
 
-    = f.input :file
+    = f.input :lab
 
-    = f.input :investigator
+    = f.input :procedure
 
-    = f.input :requester
+    = f.input :hold
 
-    = f.input :pull_list_maker
+    = f.input :repository_notes
 
-    = f.input :lab_contact_name
+    = f.input :mta_number
 
-    = f.input :notes_for_lab
+    = f.input :specimen_count
 
-    = f.input :has_mta
+    = f.input :not_found_count
 
-    = f.input :has_budget
+    = f.input :scanned_count
 
-    = f.input :accepted_consent_to_long_term_storage
-
-    = f.input :accepted_emory_specimens
-
-    = f.input :accepted_cold_chain_quality
-
-    = f.input :accepted_specimen_quality
-
+    = f.input :shipped_count
+	
+    = f.input :target_completion_date
 
   .actions
     = f.button :submit
