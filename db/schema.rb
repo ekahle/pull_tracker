@@ -11,18 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131015211451) do
+ActiveRecord::Schema.define(version: 20131015215327) do
 
   create_table "pull_lists", force: true do |t|
     t.string   "file"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "pull_id"
   end
 
   create_table "pull_manifests", force: true do |t|
     t.string   "file"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "pull_id"
   end
 
   create_table "pulls", force: true do |t|
