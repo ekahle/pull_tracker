@@ -2,6 +2,7 @@
 
 %table#pulls-table
   %tr
+    %th ID
     %th Status
     %th Description
     %th Specimen type
@@ -23,6 +24,7 @@
 
   - @pulls.each do |pull|
     %tr
+      %td= pull.id
       %td= pull.status
       %td= pull.description
       %td= pull.specimen_type

@@ -4,12 +4,13 @@
 	#{Time.now.strftime("%I:%M%p")}
 %br/
 
-%h1 Pull Summary
--if @pulls
-	@pulls.each do |pull|
-	%h3
-		= pull.id
-		= pull.status
-	=sanitize(pull.description)
-	.Status_line
-	%span.status=pull.status
+%table#pulls-table
+	%th ID
+	%th Status
+	%th Description
+	-@pulls.each do |pull|
+		%tr
+			%td= pull.id
+			%td= pull.status
+			%td= pull.description
+%br
