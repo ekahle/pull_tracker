@@ -9,7 +9,7 @@
 	%th Status
 	%th Description
 	-@pulls.each do |pull|
-		%tr
+		%tr{class: cycle('list_line_odd', 'list_line_even')}
 			%td= pull.id
 			%td= pull.status
 			%td= pull.description
