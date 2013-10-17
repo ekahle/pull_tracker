@@ -1,4 +1,4 @@
-= page_header @pull.description
+= page_header @pull.id
 
 #pull-detail
   %p
@@ -47,6 +47,14 @@
     %b Total not found:
     = @pull.not_found_count
 
+  %p
+    %b File location:
+    = @pull.pull_lists.each { |pull_list| link_to pull_list.file, pull_list}
+	
+  %p
+    %b Manifests:
+    = @pull.pull_manifests.each { |pull_manifest| link_to pull_manifest.file, pull_manifest}
+	
 = link_to 'Edit', edit_pull_path(@pull)
 \|
 = link_to 'Back', pulls_path
