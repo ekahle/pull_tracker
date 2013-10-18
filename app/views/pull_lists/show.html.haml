@@ -1,0 +1,13 @@
+%p#notice= notice
+
+%p
+  %b Pull Number:
+  = link_to @pull_list.pull.id, @pull_list.pull
+%p
+  %b File:
+  = @pull_list.file
+
+  
+= link_to 'Edit', edit_pull_list_path(@pull_list)
+\|
+= link_to 'Back', pull_lists_path

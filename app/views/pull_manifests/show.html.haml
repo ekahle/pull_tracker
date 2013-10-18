@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b File:
+  = @pull_manifest.file
+
+= link_to 'Edit', edit_pull_manifest_path(@pull_manifest)
+\|
+= link_to 'Back', pull_manifests_path

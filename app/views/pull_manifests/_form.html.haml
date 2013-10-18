@@ -1,0 +1,8 @@
+= simple_form_for(@pull_manifest) do |f|
+  = f.error_notification
+
+  .inputs
+    = f.input :file
+
+  .actions
+    = f.button :submit

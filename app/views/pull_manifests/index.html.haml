@@ -1,0 +1,19 @@
+%h1 Manifests
+
+%table
+  %tr
+    %th File
+    %th
+    %th
+    %th
+
+  - @pull_manifests.each do |pull_manifest|
+    %tr
+      %td= pull_manifest.file
+      %td= link_to 'Show', pull_manifest
+      %td= link_to 'Edit', edit_pull_manifest_path(pull_manifest)
+      %td= link_to 'Destroy', pull_manifest, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Pull manifest', new_pull_manifest_path, :class =>'btn btn-primary'

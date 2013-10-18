@@ -1,0 +1,19 @@
+%h1 Pull Lists
+
+%table
+  %tr
+    %th File
+    %th ID
+    %th
+    %th
+
+  - @pull_lists.each do |pull_list|
+    %tr
+      %td= pull_list.file
+      %td= link_to 'Show', pull_list
+      %td= link_to 'Edit', edit_pull_list_path(pull_list)
+      %td= link_to 'Destroy', pull_list, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Pull list', new_pull_list_path, :class =>'btn btn-primary'
