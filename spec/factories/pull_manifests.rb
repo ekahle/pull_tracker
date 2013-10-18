@@ -3,5 +3,6 @@
 FactoryGirl.define do
   factory :pull_manifest do
     file "MyString"
+    pull
   end
 end

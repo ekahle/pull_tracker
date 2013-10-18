@@ -5,5 +5,8 @@ User.find_or_create_by_email(FactoryGirl.attributes_for(:user, email: 'JohnDoe@e
 ## Just some play data
 3.times do
   User.find_or_create_by_email(FactoryGirl.attributes_for(:user))
-  Pull.find_or_create_by_name(FactoryGirl.attributes_for(:pull))
+  FactoryGirl.create(:pull)
+  FactoryGirl.create(:pull_with_pull_lists)
+  FactoryGirl.create(:pull_with_pull_manifests)
+  FactoryGirl.create(:pull_with_pull_lists_and_pull_manifests)
 end
