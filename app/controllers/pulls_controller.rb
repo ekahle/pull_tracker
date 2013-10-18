@@ -1,6 +1,6 @@
 class PullsController < ApplicationController
   before_action :set_pull, only: [:show, :edit, :update, :destroy]
-  
+
   # GET /pulls
   # GET /pulls.json
   def index

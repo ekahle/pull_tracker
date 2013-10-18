@@ -1,16 +1,16 @@
 = page_header 'Welcome to the ICRC Pull Tracker'
 %p
-	#{Time.now.strftime("%m/%d/%Y")}
-	#{Time.now.strftime("%I:%M%p")}
+  #{Time.now.strftime("%m/%d/%Y")}
+  #{Time.now.strftime("%I:%M%p")}
 %br/
 
 %table#pulls-table
-	%th ID
-	%th Status
-	%th Description
-	-@pulls.each do |pull|
-		%tr{class: cycle('list_line_odd', 'list_line_even')}
-			%td= pull.id
-			%td= pull.status
-			%td= pull.description
+  %th ID
+  %th Status
+  %th Description
+  -@pulls.each do |pull|
+    %tr{class: cycle('list_line_odd', 'list_line_even')}
+      %td= pull.id
+      %td= pull.status
+      %td= pull.description
 %br

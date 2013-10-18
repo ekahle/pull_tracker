@@ -1,11 +1,12 @@
 class PullListsController < ApplicationController
   before_action :set_pull_list, only: [:show, :edit, :update, :destroy]
+
   # GET /pull_lists
   # GET /pull_lists.json
   def index
     @pull_lists = PullList.all
   end
-  
+
   # GET /pull_lists/1
   # GET /pull_lists/1.json
   def show
