@@ -115,19 +115,19 @@ describe PullsController do
     context "with invalid params" do
       it "does not create a new Pull" do
         expect {
-          post :create, {pull: { name: "" }}, valid_session
+          post :create, {pull: { status: "" }}, valid_session
         }.to change(Pull, :count).by(0)
       end
 
       it "assigns a newly created but unsaved pull as @pull" do
         Pull.any_instance.stub(:save).and_return(false)
-        post :create, {pull: { name: "" }}, valid_session
+        post :create, {pull: { status: "" }}, valid_session
         expect(assigns(:pull)).to be_a_new(Pull)
       end
 
       it "re-renders the 'new' template" do
         Pull.any_instance.stub(:save).and_return(false)
-        post :create, {pull: { name: "" }}, valid_session
+        post :create, {pull: { status: "" }}, valid_session
         expect(response).to render_template("new")
       end
     end
@@ -137,8 +137,8 @@ describe PullsController do
     context "with valid params" do
       it "updates the requested pull" do
         pull = Pull.create! valid_attributes
-        Pull.any_instance.should_receive(:update).with({ "name" => "MyString" })
-        put :update, {id: pull.to_param, pull: { "name" => "MyString" }}, valid_session
+        Pull.any_instance.should_receive(:update).with({ "status" => "MyString" })
+        put :update, {id: pull.to_param, pull: { "status" => "MyString" }}, valid_session
       end
 
       it "displays a notice of success" do
@@ -164,14 +164,14 @@ describe PullsController do
       it "assigns the pull as @pull" do
         pull = Pull.create! valid_attributes
         Pull.any_instance.stub(:save).and_return(false)
-        put :update, {id: pull.to_param, pull: { name: "" }}, valid_session
+        put :update, {id: pull.to_param, pull: { status: "" }}, valid_session
         expect(assigns(:pull)).to eq(pull)
       end
 
       it "re-renders the 'edit' template" do
         pull = Pull.create! valid_attributes
         Pull.any_instance.stub(:save).and_return(false)
-        put :update, {id: pull.to_param, pull: { name: "" }}, valid_session
+        put :update, {id: pull.to_param, pull: { status: "" }}, valid_session
         expect(response).to render_template("edit")
       end
     end
