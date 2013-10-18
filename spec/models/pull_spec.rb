@@ -7,13 +7,18 @@ describe Pull do
     expect(FactoryGirl.create(:pull)).to be_true
   end
 
-  it 'must have a name' do
-    expect(FactoryGirl.build(:pull, name: nil)).to be_invalid
-    expect(FactoryGirl.build(:pull, name: '')).to be_invalid
+  it 'must have a status' do
+    expect(FactoryGirl.build(:pull, status: nil)).to be_invalid
+    expect(FactoryGirl.build(:pull, status: '')).to be_invalid
   end
 
-  it 'must have a unique name' do
-    pull = FactoryGirl.create(:pull)
-    expect {FactoryGirl.create(:pull, name: pull.name)}.to raise_error(ActiveRecord::RecordInvalid)
+  it 'must have a description' do
+    expect(FactoryGirl.build(:pull, description: nil)).to be_invalid
+    expect(FactoryGirl.build(:pull, description: '')).to be_invalid
+  end
+
+  it 'must have a specimen type' do
+    expect(FactoryGirl.build(:pull, specimen_type: nil)).to be_invalid
+    expect(FactoryGirl.build(:pull, specimen_type: '')).to be_invalid
   end
 end
