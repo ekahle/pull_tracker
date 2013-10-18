@@ -1,49 +1,49 @@
-= page_header 'List of pulls'
+= page_header 'Pulls'
 
 %table#pulls-table
   %tr
-    %th Name
+    %th ID
     %th Status
-    %th Target completion date
     %th Description
-    %th File
-    %th Investigator
-    %th Requester
-    %th Pull list maker
-    %th Lab contact name
-    %th Notes for lab
-    %th Has mta
-    %th Has budget
-    %th Accepted consent to long term storage
-    %th Accepted emory specimens
-    %th Accepted cold chain quality
-    %th Accepted specimen quality
+    %th Specimen type
+    %th Study
+    %th Participant type
+    %th Visit type
+    %th Lab
+    %th Procedure
+    %th Target completion date
+    %th Hold
+    %th Repository notes
+    %th Total specimens requested
+    %th Total scanned
+    %th Total shipped
+    %th Total not found
     %th
     %th
     %th
 
   - @pulls.each do |pull|
     %tr
-      %td= pull.name
+      %td= pull.id
       %td= pull.status
+      %td= link_to pull.description, pull_path(pull)
+      %td= pull.specimen_type
+      %td= pull.study
+      %td= pull.participant_type
+      %td= pull.visit_type
+      %td= pull.lab
+      %td= pull.procedure
       %td= pull.target_completion_date
-      %td= pull.description
-      %td= pull.file
-      %td= pull.investigator
-      %td= pull.requester
-      %td= pull.pull_list_maker
-      %td= pull.lab_contact_name
-      %td= pull.notes_for_lab
-      %td= pull.has_mta
-      %td= pull.has_budget
-      %td= pull.accepted_consent_to_long_term_storage
-      %td= pull.accepted_emory_specimens
-      %td= pull.accepted_cold_chain_quality
-      %td= pull.accepted_specimen_quality
-      %td= link_to 'Show', pull
-      %td= link_to 'Edit', edit_pull_path(pull)
-      %td= link_to 'Destroy', pull, :method => :delete, :data => { :confirm => 'Are you sure you want to delete this pull?' }
+      %td= pull.hold
+      %td= pull.repository_notes
+      %td= pull.specimen_count
+      %td= pull.scanned_count
+      %td= pull.shipped_count
+      %td= pull.not_found_count
+    
+      %td= link_to 'Edit', edit_pull_path(pull), :class => 'btn btn-mini'
+      %td= link_to 'Destroy', pull, :method => :delete, :confirm => 'Are you sure you want to delete this pull?',  :class =>'btn btn-mini btn-danger'
 
 %br
 
-= link_to 'New Pull', new_pull_path
+= link_to 'New Pull', new_pull_path, :class =>'btn btn-primary'

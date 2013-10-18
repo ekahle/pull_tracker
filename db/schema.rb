@@ -11,27 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130620225812) do
+ActiveRecord::Schema.define(version: 20131015215327) do
 
-  create_table "pulls", force: true do |t|
-    t.string   "name"
-    t.string   "status"
-    t.date     "target_completion_date"
-    t.text     "description"
+  create_table "pull_lists", force: true do |t|
     t.string   "file"
-    t.string   "investigator"
-    t.string   "requester"
-    t.string   "pull_list_maker"
-    t.string   "lab_contact_name"
-    t.text     "notes_for_lab"
-    t.boolean  "has_mta",                               default: false
-    t.boolean  "has_budget",                            default: false
-    t.boolean  "accepted_consent_to_long_term_storage", default: false
-    t.boolean  "accepted_emory_specimens",              default: false
-    t.boolean  "accepted_cold_chain_quality",           default: false
-    t.boolean  "accepted_specimen_quality",             default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "pull_id"
+  end
+
+  create_table "pull_manifests", force: true do |t|
+    t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "pull_id"
+  end
+
+  create_table "pulls", force: true do |t|
+    t.string  "status"
+    t.date    "target_completion_date"
+    t.text    "description"
+    t.string  "lab_contact_name"
+    t.string  "specimen_type"
+    t.string  "study"
+    t.string  "participant_type"
+    t.string  "visit_type"
+    t.integer "specimen_count"
+    t.integer "scanned_count"
+    t.integer "shipped_count"
+    t.integer "not_found_count"
+    t.boolean "hold"
+    t.text    "repository_notes"
+    t.string  "lab"
+    t.string  "mta_number"
+    t.string  "procedure"
   end
 
   create_table "users", force: true do |t|

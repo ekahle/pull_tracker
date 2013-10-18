@@ -3,6 +3,9 @@ ruby '1.9.3'
 # RubyGems
 source 'http://rubygems.org'
 
+# ZenTest
+#gem 'ZenTest', '4.9.2.rc'
+
 # Rails
 gem 'rails', '4.0.0.rc1'
 
@@ -11,6 +14,9 @@ gem "devise", "~> 3.0.0.rc"
 
 # Database
 gem 'sqlite3'
+
+#Boostrap
+gem 'twitter-bootstrap-rails'
 
 # Templates
 gem 'haml-rails'

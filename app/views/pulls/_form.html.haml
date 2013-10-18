@@ -2,39 +2,38 @@
   = f.error_notification
 
   .inputs
-
-    = f.input :name
-
+    
     = f.input :status
-
-    = f.input :target_completion_date
-
+	
     = f.input :description
 
-    = f.input :file
+    = f.input :study
 
-    = f.input :investigator
+    = f.input :participant_type
 
-    = f.input :requester
+    = f.input :visit_type
+	
+    = f.input :specimen_type
 
-    = f.input :pull_list_maker
+    = f.input :lab
 
-    = f.input :lab_contact_name
+    = f.input :procedure
 
-    = f.input :notes_for_lab
+    = f.input :hold
 
-    = f.input :has_mta
+    = f.input :repository_notes
 
-    = f.input :has_budget
+    = f.input :mta_number
 
-    = f.input :accepted_consent_to_long_term_storage
+    = f.input :specimen_count
 
-    = f.input :accepted_emory_specimens
+    = f.input :not_found_count
 
-    = f.input :accepted_cold_chain_quality
+    = f.input :scanned_count
 
-    = f.input :accepted_specimen_quality
-
+    = f.input :shipped_count
+	
+    = f.input :target_completion_date
 
   .actions
     = f.button :submit
