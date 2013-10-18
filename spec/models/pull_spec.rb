@@ -21,4 +21,9 @@ describe Pull do
     expect(FactoryGirl.build(:pull, specimen_type: nil)).to be_invalid
     expect(FactoryGirl.build(:pull, specimen_type: '')).to be_invalid
   end
+
+  it 'should create a pull name from attributes' do
+    pull = FactoryGirl.build(:pull)
+    expect(pull.name).to match Regexp.new "^Pull #{pull.id}$"
+  end
 end
