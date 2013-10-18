@@ -1,8 +1,6 @@
 = page_header 'Welcome to the ICRC Pull Tracker'
-%p
-  #{Time.now.strftime("%m/%d/%Y")}
-  #{Time.now.strftime("%I:%M%p")}
-%br/
+
+%p= Time.now.strftime("%m/%d/%Y %I:%M %p")
 
 %table#pulls-table
   %th ID
@@ -13,4 +11,3 @@
       %td= pull.id
       %td= pull.status
       %td= pull.description
-%br
