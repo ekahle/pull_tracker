@@ -56,7 +56,7 @@ class PullManifestsController < ApplicationController
   def destroy
     @pull_manifest.destroy
     respond_to do |format|
-      format.html { redirect_to pull_manifests_url }
+      format.html { redirect_to pull_manifests_url, notice: 'Pull manifest was successfully deleted.' }
       format.json { head :no_content }
     end
   end
