@@ -3,9 +3,6 @@ ruby '1.9.3'
 # RubyGems
 source 'http://rubygems.org'
 
-# ZenTest
-#gem 'ZenTest', '4.9.2.rc'
-
 # Rails
 gem 'rails', '4.0.0.rc1'
 
