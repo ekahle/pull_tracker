@@ -5,4 +5,8 @@ class Pull < ActiveRecord::Base
   default_scope order('id DESC')
 
   validates :status, :description, :specimen_type, presence: true
+
+  def name
+    "Pull #{id}"
+  end
 end
