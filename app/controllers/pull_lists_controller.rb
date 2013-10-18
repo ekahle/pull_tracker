@@ -69,6 +69,6 @@ class PullListsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pull_list_params
-      params.require(:pull_list).permit(:file)
+      params.require(:pull_list).permit(:pull_id, :file)
     end
 end

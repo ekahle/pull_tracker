@@ -4,5 +4,7 @@
   .inputs
     = f.input :file
 
+    = f.collection_select(:pull_id, Pull.all, :id, :name)
+
   .actions
     = f.button :submit

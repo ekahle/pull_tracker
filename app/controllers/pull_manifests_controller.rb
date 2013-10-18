@@ -69,6 +69,6 @@ class PullManifestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pull_manifest_params
-      params.require(:pull_manifest).permit(:file)
+      params.require(:pull_manifest).permit(:pull_id, :file)
     end
 end
