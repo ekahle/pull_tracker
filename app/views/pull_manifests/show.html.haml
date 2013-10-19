@@ -1,8 +1,11 @@
 = page_header @pull_manifest.id
 
-%p
-  %b File:
-  = @pull_manifest.file
+#pull_manifest-detail
+  %p
+    %b= link_to @pull_manifest.pull.name, @pull_manifest.pull
+  %p
+    %b File:
+    = @pull_manifest.file
 
 = link_to 'Edit', edit_pull_manifest_path(@pull_manifest)
 \|

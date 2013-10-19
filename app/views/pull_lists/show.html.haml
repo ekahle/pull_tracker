@@ -1,12 +1,11 @@
 = page_header @pull_list.id
 
-%p
-  %b Pull Number:
-  = link_to @pull_list.pull.id, @pull_list.pull
-%p
-  %b File:
-  = @pull_list.file
-
+#pull_list-detail
+  %p
+    %b= link_to @pull_list.pull.name, @pull_list.pull
+  %p
+    %b File:
+    = @pull_list.file
 
 = link_to 'Edit', edit_pull_list_path(@pull_list)
 \|
