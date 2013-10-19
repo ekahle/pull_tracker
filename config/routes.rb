@@ -1,10 +1,8 @@
 PullTracker::Application.routes.draw do
-  resources :pull_manifests
-
-  resources :pull_lists
-
   root 'home#index'
   devise_for :users
   resources :users
   resources :pulls
+  resources :pull_lists
+  resources :pull_manifests
 end
