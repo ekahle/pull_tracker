@@ -12,9 +12,6 @@ gem "devise", "~> 3.0.0.rc"
 # Database
 gem 'sqlite3'
 
-#Boostrap
-gem 'twitter-bootstrap-rails'
-
 # Templates
 gem 'haml-rails'
 gem 'simple_form'
