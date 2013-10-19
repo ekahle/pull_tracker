@@ -2,18 +2,17 @@
 
 %table.table.table-responsive.table-bordered.table-hover#pull_manifests-table
   %tr
+    %th Pull ID
     %th File
-    %th
-    %th
     %th
 
   - @pull_manifests.each do |pull_manifest|
     %tr
-      %td= pull_manifest.file
-      %td= link_to 'Show', pull_manifest
-      %td= link_to 'Edit', edit_pull_manifest_path(pull_manifest)
-      %td= link_to 'Destroy', pull_manifest, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
+      %td= link_to pull_manifest.pull.id, pull_path(pull_manifest.pull)
+      %td= link_to pull_manifest.file, pull_manifest
+      %td
+        = link_to 'Edit', edit_pull_manifest_path(pull_manifest), class: 'btn btn-mini'
+        = link_to 'Destroy', pull_manifest, method: :delete, confirm: 'Are you sure you want to delete this pull manifest?', class: 'btn btn-mini btn-danger'
 %br
 
-= link_to 'New Pull manifest', new_pull_manifest_path, :class =>'btn btn-primary'
+= link_to 'New Pull manifest', new_pull_manifest_path, class: 'btn btn-primary'
