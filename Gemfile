@@ -7,7 +7,7 @@ source 'http://rubygems.org'
 gem 'rails'
 
 # Security
-gem "devise", "~> 3.0.0.rc"
+gem "devise"
 
 # Database
 gem 'sqlite3'
@@ -17,17 +17,17 @@ gem 'haml-rails'
 gem 'simple_form'
 
 # CSS
-gem 'sass-rails', '~> 4.0.0.rc1'
+gem 'sass-rails'
 gem 'bootstrap-sass-rails'
 
 # Javascript
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails'
 gem 'jquery-rails'
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'
 
 # AJAX
 gem 'turbolinks'
-gem 'jbuilder', '~> 1.0.1'
+gem 'jbuilder'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
