@@ -4,7 +4,7 @@ ruby '1.9.3'
 source 'http://rubygems.org'
 
 # Rails
-gem 'rails', '4.0.0.rc1'
+gem 'rails'
 
 # Security
 gem "devise", "~> 3.0.0.rc"
