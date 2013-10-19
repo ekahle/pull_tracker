@@ -2,12 +2,12 @@
 
 %p= Time.now.strftime("%m/%d/%Y %I:%M %p")
 
-%table#pulls-table
+%table.table.table-responsive.table-hover#pulls-table
   %th ID
   %th Status
   %th Description
   -@pulls.each do |pull|
-    %tr{class: cycle('list_line_odd', 'list_line_even')}
+    %tr
       %td= pull.id
       %td= pull.status
       %td= pull.description
