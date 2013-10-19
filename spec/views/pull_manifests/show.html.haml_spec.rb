@@ -1,15 +1,12 @@
 require 'spec_helper'
 
-describe "pull_manifests/show" do
-  before(:each) do
-    @pull_manifest = assign(:pull_manifest, stub_model(PullManifest,
-      :file => "File"
-    ))
-  end
+describe 'pull_manifests/show' do
+  before(:each) {assign(:pull_manifest, FactoryGirl.build(:pull_manifest))}
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do
     render
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(/File/)
+    expect(rendered).to render_template partial: 'layouts/_page_header'
+    expect(rendered).not_to have_selector 'h1'
+    expect(rendered).to have_selector 'div#pull_manifest-detail'
   end
 end

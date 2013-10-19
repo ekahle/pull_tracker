@@ -1,18 +1,12 @@
 require 'spec_helper'
 
-describe "pull_lists/new" do
-  before(:each) do
-    assign(:pull_list, stub_model(PullList,
-      :file => "MyString"
-    ).as_new_record)
-  end
+describe 'pull_lists/new' do
+  before(:each) {assign(:pull_list, Pull.new)}
 
-  it "renders new pull_list form" do
+  it 'renders new pull_list form' do
     render
-
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "form[action=?][method=?]", pull_lists_path, "post" do
-      assert_select "input#pull_list_file[name=?]", "pull_list[file]"
-    end
+    expect(rendered).to render_template partial: 'layouts/_page_header'
+    expect(rendered).not_to have_selector 'h1'
+    assert_select 'form#new_pull_list[action=?][method=?]', pull_lists_path, 'post'
   end
 end

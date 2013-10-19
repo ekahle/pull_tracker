@@ -1,15 +1,12 @@
 require 'spec_helper'
 
-describe "pull_lists/show" do
-  before(:each) do
-    @pull_list = assign(:pull_list, stub_model(PullList,
-      :file => "File"
-    ))
-  end
+describe 'pull_lists/show' do
+  before(:each) {assign(:pull_list, FactoryGirl.build(:pull_list))}
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do
     render
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(/File/)
+    expect(rendered).to render_template partial: 'layouts/_page_header'
+    expect(rendered).not_to have_selector 'h1'
+    expect(rendered).to have_selector 'div#pull_list-detail'
   end
 end

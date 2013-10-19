@@ -1,20 +1,12 @@
 require 'spec_helper'
 
-describe "pull_manifests/index" do
-  before(:each) do
-    assign(:pull_manifests, [
-      stub_model(PullManifest,
-        :file => "File"
-      ),
-      stub_model(PullManifest,
-        :file => "File"
-      )
-    ])
-  end
+describe 'pull_manifests/index' do
+  before(:each) {assign(:pull_manifests, [FactoryGirl.build(:pull_manifest), FactoryGirl.build(:pull_manifest)])}
 
-  it "renders a list of pull_manifests" do
+  it 'renders a list of pull_manifests' do
     render
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "tr>td", :text => "File".to_s, :count => 2
+    expect(rendered).to render_template partial: 'layouts/_page_header'
+    expect(rendered).not_to have_selector 'h1'
+    expect(rendered).to have_selector 'table#pull_manifests-table'
   end
 end
