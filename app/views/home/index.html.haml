@@ -1,7 +1,5 @@
 = page_header 'Welcome to the ICRC Pull Tracker'
 
-%p= Time.now.strftime("%m/%d/%Y %I:%M %p")
-
 %table.table.table-responsive.table-bordered.table-hover#pulls-table
   %th ID
   %th Status
@@ -11,3 +9,6 @@
       %td= pull.id
       %td= pull.status
       %td= pull.description
+
+%p.pull-right
+  %em= "Content updated #{Time.now.strftime('%d %B %Y at %I:%M %p')}"
