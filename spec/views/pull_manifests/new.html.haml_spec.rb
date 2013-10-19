@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'pull_manifests/new' do
-  before(:each) {assign(:pull_manifest, Pull.new)}
+  before(:each) {assign(:pull_manifest, PullManifest.new)}
 
   it 'renders new pull_manifest form' do
     render
