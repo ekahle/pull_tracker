@@ -51,12 +51,16 @@
     = @pull.not_found_count
 
   %p
-    %b File location:
-    = @pull.pull_lists.each { |pull_list| link_to pull_list.file, pull_list}
+    %b Pull lists:
+  %ul
+    - @pull.pull_lists.each do |pull_list|
+      %li= link_to pull_list.file, pull_list
 
   %p
-    %b Manifests:
-    = @pull.pull_manifests.each { |pull_manifest| link_to pull_manifest.file, pull_manifest}
+    %b Pull manifests:
+  %ul
+    - @pull.pull_manifests.each do |pull_manifest|
+      %li= link_to pull_manifest.file, pull_manifest
 
 = link_to 'Edit', edit_pull_path(@pull)
 \|
