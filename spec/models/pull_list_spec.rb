@@ -11,4 +11,9 @@ describe PullList do
     expect(FactoryGirl.build(:pull_list, pull_id: nil)).to be_invalid
     expect(FactoryGirl.build(:pull_list, pull_id: '')).to be_invalid
   end
+
+  it 'must have a file' do
+    expect(FactoryGirl.build(:pull_list, file: nil)).to be_invalid
+    expect(FactoryGirl.build(:pull_list, file: '')).to be_invalid
+  end
 end
