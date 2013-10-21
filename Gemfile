@@ -18,7 +18,7 @@ gem 'simple_form'
 
 # CSS
 gem 'sass-rails'
-gem 'bootstrap-sass-rails'
+gem 'bootstrap-sass'
 
 # Javascript
 gem 'coffee-rails'
