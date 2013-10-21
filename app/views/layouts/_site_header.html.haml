@@ -10,13 +10,13 @@
             %span.icon-bar
           .nav-collapse.collapse
             %ul.nav#site-nav
-              %li
+              %li{class: ('active' if controller?('pulls'))}
                 = link_to 'Pulls', pulls_path
-              %li
+              %li{class: ('active' if controller?('pull_lists'))}
                 = link_to 'Pull lists', pull_lists_path
-              %li
+              %li{class: ('active' if controller?('pull_manifests'))}
                 = link_to 'Pull manifests', pull_manifests_path
-              %li
+              %li{class: ('active' if controller?('users'))}
                 = link_to 'Users', users_path
 
             %ul.pull-right.nav#user-nav
